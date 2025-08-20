@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>พอร์ตโฟลิโอ | วงศกร ขุนไชยการ</title>
+  <meta name="description" content="พอร์ตโฟลิโอนักศึกษา: ผลงาน คอร์ส/ทักษะ การศึกษา และช่องทางติดต่อ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0b10; --bg-2:#12121a; --text:#eef0ff; --muted:#b7b9d4; --primary:#7c3aed; --primary-2:#a78bfa; --accent:#9d4edd; --ok:#22c55e; --danger:#ef4444; --radius:18px; --shadow:0 10px 20px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.2); --glass:rgba(255,255,255,.06); --glass-border:1px solid rgba(255,255,255,.1); --maxw:1200px; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{ margin:0; font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background: radial-gradient(1200px 600px at 85% -10%, rgba(124,58,237,.15), transparent 60%), radial-gradient(1000px 500px at -10% 10%, rgba(167,139,250,.12), transparent 55%), linear-gradient(180deg, #0a0a12 0%, #0b0b10 60%); color:var(--text); line-height:1.6; letter-spacing:.2px }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:14px}
+    /* Navbar */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(10,10,18,.7), rgba(10,10,18,.45)); border-bottom:var(--glass-border)}
+    .nav-wrap{max-width:var(--maxw); margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
+    .logo{width:34px; height:34px; border-radius:10px; display:grid; place-items:center; background:linear-gradient(135deg, var(--primary), #4c1d95); box-shadow:0 8px 20px rgba(124,58,237,.35)}
+    .logo svg{width:18px;height:18px}
+    .menu{display:flex; gap:18px; align-items:center}
+    .menu a{padding:8px 12px; opacity:.9; border-radius:12px; transition:.25s}
+    .menu a:hover{background:var(--glass); opacity:1}
+    .cta{display:flex; gap:10px}
+    .btn{border:none; cursor:pointer; padding:10px 14px; border-radius:14px; font-weight:600; transition:.25s; display:inline-flex; align-items:center; gap:8px}
+    .btn.primary{background:linear-gradient(135deg, var(--primary), var(--accent)); color:white; box-shadow:0 10px 24px rgba(124,58,237,.35)}
+    .btn.ghost{background:transparent; border:var(--glass-border)}
+    .btn:hover{transform:translateY(-2px)}
+    .hamb{display:none; background:transparent; border:var(--glass-border); border-radius:12px; padding:8px}
+    .mobile{display:none; padding:0 20px 16px}
+    .mobile a{display:block; padding:10px 12px; border-radius:12px}
+    /* Layout */
+    .container{max-width:var(--maxw); margin:0 auto; padding:40px 20px}
+    section{scroll-margin-top:90px}
+    /* Hero */
+    .hero{display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; padding-top:34px}
+    .tag{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; background:var(--glass); border:var(--glass-border); font-size:12px; color:var(--muted)}
+    .title{font-size:clamp(28px, 4.8vw, 56px); line-height:1.1; margin:14px 0 8px; font-weight:900}
+    .subtitle{color:var(--muted); font-size:clamp(14px, 1.4vw, 18px); max-width:62ch}
+    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .hero-card{background:var(--glass); border:var(--glass-border); padding:14px; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px}
+    .stat{background:linear-gradient(180deg, rgba(124,58,237,.12), rgba(255,255,255,.04)); border:var(--glass-border); border-radius:16px; padding:14px; text-align:center}
+    .stat b{font-size:22px}
+    .preview{position:relative}
+    .preview .frame{border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,.08); box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .glow{position:absolute; inset:-2px; background: radial-gradient(600px 200px at 70% -10%, rgba(124,58,237,.18), transparent 40%); pointer-events:none}
+    .hero-img{width:100%; height:100%; object-fit:cover; display:block}
+    /* Sections */
+    .section-title{font-size:28px; font-weight:800; margin-bottom:10px}
+    .section-desc{color:var(--muted); margin-bottom:18px}
+    /* Skills */
+    .skills{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+    .chip{background:var(--glass); border:var(--glass-border); padding:10px 12px; border-radius:999px; display:flex; align-items:center; gap:10px}
+    .meter{width:100%; height:6px; background:rgba(255,255,255,.08); border-radius:999px; overflow:hidden}
+    .meter > i{display:block; height:100%; background:linear-gradient(90deg, var(--primary), var(--primary-2))}
+    /* Projects */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .card{background:var(--glass); border:var(--glass-border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column}
+    .card .thumb{background:linear-gradient(135deg, rgba(124,58,237,.25), rgba(167,139,250,.15)); aspect-ratio: 16/9; display:grid; place-items:center; overflow:hidden}
+    .thumb img{width:100%; height:100%; object-fit:cover}
+    .thumb video, .thumb iframe{width:100%; height:100%; object-fit:cover; display:block; border:0}
+    /* Slider */
+    .slider{position:relative;width:100%;height:100%}
+    .slides{display:flex;width:100%;height:100%;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+    .slides img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block}
+    .slider .sbtn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);color:#fff;padding:8px 12px;border-radius:12px;cursor:pointer;z-index:2}
+    .slider .sbtn:hover{background:rgba(0,0,0,.5)}
+    .slider .prev{left:8px}
+    .slider .next{right:8px}
+    .slider .dots{display:none}
+    .slider .dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.5)}
+    .slider .dot.active{background:#fff}
+    .card .content{padding:14px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0}
+    .tag-s{font-size:12px; padding:4px 8px; border-radius:999px; background:rgba(124,58,237,.14); border:1px solid rgba(124,58,237,.3)}
+    .card .actions{margin-top:auto}
+    /* Timeline (Education) */
+    .timeline{position:relative; padding-left:20px}
+    .timeline::before{content:""; position:absolute; left:7px; top:0; bottom:0; width:2px; background:linear-gradient(180deg, rgba(124,58,237,.6), rgba(124,58,237,0))}
+    .t-item{position:relative; margin-bottom:16px; background:var(--glass); border:var(--glass-border); padding:12px 12px 12px 16px; border-radius:14px}
+    .t-item::before{content:""; position:absolute; left:-2px; top:14px; width:10px; height:10px; border-radius:999px; background:var(--primary); box-shadow:0 0 0 4px rgba(124,58,237,.2)}
+    /* Form */
+    form{display:grid; gap:12px; max-width:720px}
+    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#0e0e15; color:var(--text)}
+    textarea{min-height:140px; resize:vertical}
+    .hint{color:var(--muted); font-size:13px}
+    /* Footer */
+    .footer{border-top:var(--glass-border); background:rgba(0,0,0,.3)}
+    .foot-grid{display:grid; grid-template-columns: 1.2fr .8fr .8fr; gap:18px}
+    /* Responsive */
+    @media (max-width: 1024px){ .hero{grid-template-columns:1fr;} .grid{grid-template-columns:repeat(2,1fr)} .skills{grid-template-columns:repeat(3,1fr)} .foot-grid{grid-template-columns:1fr 1fr} }
+    @media (max-width: 640px){ .menu, .cta{display:none} .hamb{display:inline-flex} .grid{grid-template-columns:1fr} .skills{grid-template-columns:repeat(2,1fr)} .nav-wrap{padding:10px 16px} }
+  </style>
+</head>
+<body>
+  <!-- ===================== Navbar ===================== -->
+  <nav class="nav" aria-label="เมนูหลัก">
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="กลับไปด้านบน">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 3l8 4.6v8.8L12 21l-8-4.6V7.6L12 3z" stroke="white" stroke-opacity=".9" stroke-width="1.4"/>
+            <path d="M12 7.2L7 10v4l5 2.8 5-2.8v-4l-5-2.8z" fill="white" fill-opacity=".9"/>
+          </svg>
+        </span>
+        <span>วงศกร ขุนไชยการ</span>
+      </a>
+      <div class="menu" role="menubar">
+        <a href="#projects" role="menuitem">ผลงาน</a>
+        <a href="#about" role="menuitem">เกี่ยวกับ</a>
+        <a href="#skills" role="menuitem">ทักษะ</a>
+        <a href="#education" role="menuitem">การศึกษา</a>
+        <a href="#contact" role="menuitem">ติดต่อ</a>
+      </div>
+      <div class="cta">
+        <a class="btn ghost" href="#contact" aria-label="ไปที่ฟอร์มติดต่อ">ติดต่อ</a>
+        <a class="btn primary" href="#projects" aria-label="ดูผลงาน">ดูผลงาน</a>
+      </div>
+      <button class="hamb" id="hamb" aria-label="เปิดเมนู">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile" hidden>
+      <a href="#projects">ผลงาน</a>
+      <a href="#about">เกี่ยวกับ</a>
+      <a href="#skills">ทักษะ</a>
+      <a href="#education">การศึกษา</a>
+      <a href="#contact">ติดต่อ</a>
+    </div>
+  </nav>
+
+  <!-- ===================== Hero ===================== -->
+  <header id="home" class="container hero">
+    <div>
+      <span class="tag"><span style="width:8px;height:8px;border-radius:99px;background:var(--ok);"></span> พอร์ตโฟลิโอนักศึกษา</span>
+      <h1 class="title" data-animate>สวัสดีครับ ผมคือ <span style="background:linear-gradient(90deg,var(--primary),var(--primary-2)); -webkit-background-clip:text; background-clip:text; color:transparent">วงศกร ขุนไชยการ</span></h1>
+      <p class="subtitle" data-animate>นักศึกษาสาขา Information Technology มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตสุราษฎร์ธานี สนใจด้าน Quality Assurance, Software Testing และการพัฒนาเว็บพื้นฐาน</p>
+      <div class="actions" data-animate>
+        <a class="btn primary" href="#projects">ดูผลงานในมหาวิทยาลัย</a>
+        <a class="btn ghost" href="Black White Minimalist CV Resume.pdf" target="_blank" rel="noopener">ดาวน์โหลด Resume</a>
+        <a class="btn ghost" href="mailto:psu.pagame@gmail.com">อีเมล</a>
+      </div>
+      <div class="stats" data-animate>
+        <div class="stat"><b>GPA 3.28</b><br><small>PSU Surat Thani</small></div>
+        <div class="stat"><b>ปี 4</b><br><small>กำลังศึกษา</small></div>
+        <div class="stat"><b>โฟกัส</b><br><small>QA / Testing</small></div>
+      </div>
+    </div>
+    <div class="preview" aria-hidden="true">
+      <div class="glow"></div>
+      <div class="frame">
+        <!-- วางไฟล์รูปของคุณที่โฟลเดอร์ images/ แล้วเปลี่ยนชื่อไฟล์ด้านล่างให้ตรง -->
+        <img class="hero-img" src="Pro.jpg" alt="รูปโปรไฟล์หรือภาพประกอบผลงาน">
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== Projects ===================== -->
+  <section id="projects" class="container" aria-label="ผลงานเด่น">
+    <h2 class="section-title">ผลงานเด่น</h2>
+    <p class="section-desc">โปรเจกต์ในมหาวิทยาลัยและงานส่วนตัวที่ช่วยพัฒนาทักษะ</p>
+    <div class="grid">
+      <!-- Project 1 -->
+      <article class="card" data-animate>
+        <div class="thumb">
+          <div class="slider" data-slider>
+            <div class="slides">
+              <!-- เพิ่ม/ลบรูปได้ตามต้องการ ชื่อด้านล่างเป็นตัวอย่าง -->
+              <img src="Carbon.png" alt="หน้าปก Carbon Emission 1" onerror="this.remove()">
+              <img src="533424586_1068771698675119_1104433311732857869_n.jpg" alt="หน้าปก Carbon Emission 2" onerror="this.remove()">
+              <img src="Carbon-3.png" alt="หน้าปก Carbon Emission 3" onerror="this.remove()">
+            </div>
+            <button class="sbtn prev" aria-label="ภาพก่อนหน้า">‹</button>
+            <button class="sbtn next" aria-label="ภาพถัดไป">›</button>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Carbon Emission Calculator Web Application (2024)</h3>
+          <div class="tags">
+            <span class="tag-s">PHP</span>
+            <span class="tag-s">HTML/CSS</span>
+            <span class="tag-s">JavaScript</span>
+          </div>
+          <p>เว็บแอปสำหรับคำนวณการปล่อยคาร์บอนจากการเดินทางของนักศึกษา เน้นตรวจสอบความถูกต้องของอินพุตและตรรกะการคำนวณ (โครงการภายใต้ ม.อ. สุราษฎร์ธานี)</p>
+          <div class="actions">
+            <a class="btn ghost" href="#" target="_blank" rel="noopener">เดโม</a>
+            <a class="btn primary" href="#" target="_blank" rel="noopener">โค้ด</a>
+          </div>
+        </div>
+      </article>
+      <!-- Project 2 -->
+      <article class="card" data-animate>
+        <div class="thumb">
+          <!-- วางไฟล์วิดีโอไว้ที่โฟลเดอร์ videos/ เปลี่ยนชื่อให้ตรง -->
+          <video class="proj-video" controls playsinline muted loop preload="metadata" poster="images/proj-2.jpg">
+            <source src="111111.mp4" type="video/mp4">
+            <source src="videos/proj-2.webm" type="video/webm">
+            <!-- ถ้าบราวเซอร์ไม่รองรับวิดีโอ จะโชว์ภาพแทน -->
+            <img src="images/proj-2.jpg" alt="หน้าปกโปรเจกต์วิดีโอ">
+          </video>
+        </div>
+        <div class="content">
+          <h3>แอพเเจ้งเตือนฮีทสโตรกด้วยอุปกรณ์ IOT (2023)</h3>
+          <div class="tags">
+            <span class="tag-s">JavaScript</span>
+            <span class="tag-s">Firebase</span>
+            <span class="tag-s">C++</span>
+          </div>
+          <p>ต้นแบบระบบ IoT ตรวจจับความเสี่ยงฮีตสโตรกจากข้อมูลอุณหภูมิ/ความชื้น ส่งแจ้งเตือนแบบเรียลไทม์ผ่านแอปพลิเคชันและบันทึกข้อมูลบน Firebase</p>
+          <div class="actions">
+            <a class="btn ghost" href="https://www.canva.com/design/DAGKsnWzTDs/k7SCG6WdYcn3Ohwx9tIVPg/edit?utm_content=DAGKsnWzTDs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener">เดโม</a>
+            <a class="btn primary" href="#" target="_blank" rel="noopener">โค้ด</a>
+          </div>
+        </div>
+      </article>
+      <!-- Project 3 -->
+      <article class="card" data-animate>
+        <div class="thumb">
+          <div class="slider" data-slider>
+            <div class="slides">
+              <!-- เพิ่ม/ลบรูปได้ตามต้องการ ชื่อด้านล่างเป็นตัวอย่าง -->
+              <img src="1.png" alt="หน้าปก Carbon Emission 1" onerror="this.remove()">
+              <img src="2.png" alt="หน้าปก Carbon Emission 2" onerror="this.remove()">
+              <img src="3.png" alt="หน้าปก Carbon Emission 3" onerror="this.remove()">
+              <img src="4.png" alt="หน้าปก Carbon Emission 3" onerror="this.remove()">
+              <img src="5.png" alt="หน้าปก Carbon Emission 3" onerror="this.remove()">
+              <img src="6.png" alt="หน้าปก Carbon Emission 3" onerror="this.remove()">
+              <img src="7.png" alt="หน้าปก Carbon Emission 3" onerror="this.remove()">
+            </div>
+            <button class="sbtn prev" aria-label="ภาพก่อนหน้า">‹</button>
+            <button class="sbtn next" aria-label="ภาพถัดไป">›</button>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="content">
+          <h3>ระบบกลางขายบีทเพลง (2025)</h3>
+          <div class="tags">
+            <span class="tag-s">Figma</span>
+            <span class="tag-s">UI/UX</span>
+          </div>
+          <p>ออกแบบ UX/UI และต้นแบบหน้าเพจขายบีท</p>
+          <div class="actions">
+            <a class="btn ghost" href="#" target="_blank" rel="noopener">เดโม</a>
+            <a class="btn primary" href="#" target="_blank" rel="noopener">โค้ด</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== About ===================== -->
+  <section id="about" class="container" aria-label="เกี่ยวกับฉัน">
+    <h2 class="section-title">เกี่ยวกับฉัน</h2>
+    <p class="section-desc">ผมชื่อ วงศกร ขุนไชยการ (Game) อายุ 22 ปี จากจังหวัดนครศรีธรรมราช กำลังศึกษาปริญญาตรีสาขา Information Technology ที่ ม.อ. วิทยาเขตสุราษฎร์ธานี ตั้งใจฝึกฝนด้าน QA/Software Testing และการพัฒนาเว็บ</p>
+    <div class="hero-card" data-animate>
+      <p style="margin:0">เป้าหมาย: หาโอกาสฝึกงาน/ทำโครงการร่วมกับทีม เพื่อพัฒนาทักษะการทดสอบซอฟต์แวร์ การเขียนเคสทดสอบ และการทำงานร่วมกัน</p>
+    </div>
+  </section>
+
+  <!-- ===================== Skills ===================== -->
+  <section id="skills" class="container" aria-label="ทักษะ">
+    <h2 class="section-title">ทักษะ</h2>
+    <p class="section-desc">เทคโนโลยีและเครื่องมือที่ถนัด</p>
+    <div class="skills">
+      <div class="chip" data-animate><strong>HTML/CSS</strong><span class="meter"><i style="width:85%"></i></span></div>
+      <div class="chip" data-animate><strong>JavaScript</strong><span class="meter"><i style="width:60%"></i></span></div>
+      <div class="chip" data-animate><strong>PHP</strong><span class="meter"><i style="width:60%"></i></span></div>
+      <div class="chip" data-animate><strong>Python</strong><span class="meter"><i style="width:60%"></i></span></div>
+      <div class="chip" data-animate><strong>Java</strong><span class="meter"><i style="width:60%"></i></span></div>
+      <div class="chip" data-animate><strong>MySQL</strong><span class="meter"><i style="width:80%"></i></span></div>
+      <div class="chip" data-animate><strong>Firebase</strong><span class="meter"><i style="width:60%"></i></span></div>
+      <div class="chip" data-animate><strong>MongoDB</strong><span class="meter"><i style="width:60%"></i></span></div>
+      <div class="chip" data-animate><strong>Figma</strong><span class="meter"><i style="width:80%"></i></span></div>
+      <div class="chip" data-animate><strong>Canva</strong><span class="meter"><i style="width:60%"></i></span></div>
+      <div class="chip" data-animate><strong>Tailwind CSS</strong><span class="meter"><i style="width:60%"></i></span></div>
+      <div class="chip" data-animate><strong>ภาษา: ไทย (ดี), อังกฤษ (พอใช้)</strong><span class="meter"><i style="width:70%"></i></span></div>
+    </div>
+  </section>
+
+  <!-- ===================== Education ===================== -->
+  <section id="education" class="container" aria-label="การศึกษา">
+    <h2 class="section-title">การศึกษา</h2>
+    <p class="section-desc">เส้นทางการเรียนและหัวข้อที่สนใจ</p>
+    <div class="timeline">
+      <div class="t-item" data-animate>
+        <b>Prince of Songkla University — Information Technology (B.Sc.)</b>
+        <div class="hint">2022 – ปัจจุบัน | GPA 3.28</div>
+        <div>รายวิชาที่ชอบ: Web Programming, Database Systems, Human-Computer Interaction, Data Science</div>
+      </div>
+      <div class="t-item" data-animate>
+        <b>Srithammaratsuksa School — วิทย์-คณิต</b>
+        <div class="hint">2016 – 2022</div>
+        <div>พัฒนาพื้นฐานคณิตศาสตร์และวิทยาศาสตร์สำหรับสาย IT</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section id="contact" class="container" aria-label="ติดต่อฉัน">
+    <h2 class="section-title">ติดต่อ</h2>
+    <p class="section-desc">ยินดีรับคำแนะนำ/โอกาสฝึกงาน ติดต่อได้ตามช่องทางด้านล่าง</p>
+    <form action="mailto:psu.pagame@gmail.com" method="post" enctype="text/plain">
+      <label class="sr" for="name">ชื่อ</label>
+      <input id="name" name="name" type="text" placeholder="ชื่อของคุณ" required>
+      <label class="sr" for="email">อีเมล</label>
+      <input id="email" name="email" type="email" placeholder="อีเมลของคุณ" required>
+      <label class="sr" for="msg">ข้อความ</label>
+      <textarea id="msg" name="message" placeholder="อยากคุยเรื่องอะไร"></textarea>
+      <div class="actions">
+        <button class="btn primary" type="submit">ส่งข้อความ</button>
+        <span class="hint">หรืออีเมลโดยตรงที่ <a href="mailto:psu.pagame@gmail.com">psu.pagame@gmail.com</a> | โทร 096-858-5135 | Line: gxmee</span>
+      </div>
+    </form>
+  </section>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="container foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:8px">
+          <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l8 4.6v8.8L12 21l-8-4.6V7.6L12 3z" stroke="white" stroke-opacity=".9" stroke-width="1.4"/></svg></span>
+          <strong>วงศกร ขุนไชยการ</strong>
+        </div>
+        <div class="hint">© <span id="year"></span> All rights reserved.</div>
+      </div>
+      <div>
+        <div class="hint">โซเชียล</div>
+        <div class="actions" style="margin-top:10px">
+          <a class="btn ghost" href="https://web.facebook.com/PaGame12" aria-label="Facebook">Facebook</a>
+          <a class="btn ghost" href="https://line.me/ti/p/PwQNPxhFeS" aria-label="Line">Line</a>
+        </div>
+      </div>
+      <div>
+        <div class="hint">เอกสาร</div>
+        <div class="actions" style="margin-top:10px">
+          <a class="btn ghost" href="Black White Minimalist CV Resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a class="btn ghost" href="Transcript Wongsakorn Khunchaikarn.pdf">Transcript (ขอเมื่อจำเป็น)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="toTop" class="btn primary" style="position:fixed; right:16px; bottom:16px; display:none">▲ ขึ้นบน</button>
+
+  <script>
+    // Mobile menu toggle
+    const hamb = document.getElementById('hamb');
+    const mobile = document.getElementById('mobileMenu');
+    hamb?.addEventListener('click', () => {
+      const open = mobile.hasAttribute('hidden');
+      if(open){ mobile.removeAttribute('hidden'); hamb.setAttribute('aria-label','ปิดเมนู'); }
+      else { mobile.setAttribute('hidden',''); hamb.setAttribute('aria-label','เปิดเมนู'); }
+    });
+    // Animate on view
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target) } });
+    }, {threshold:.15});
+    document.querySelectorAll('[data-animate]').forEach(el=>io.observe(el));
+    // Back to top button
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => { toTop.style.display = window.scrollY > 600 ? 'inline-flex' : 'none'; });
+    toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // --- Simple slider for project images ---
+    (function(){
+      const sliders = document.querySelectorAll('[data-slider]');
+      sliders.forEach(slider=>{
+        const track = slider.querySelector('.slides');
+        let slides = Array.from(track.querySelectorAll('img'));
+        if(slides.length === 0){ slider.style.display='none'; return; }
+        let i = 0;
+        const btnPrev = slider.querySelector('.prev');
+        const btnNext = slider.querySelector('.next');
+        const dotsWrap = slider.querySelector('.dots');
+        // build dots
+        slides.forEach((s,idx)=>{
+          const d=document.createElement('button');
+          d.className='dot'+(idx===0?' active':'');
+          d.setAttribute('aria-label','ไปภาพที่ '+(idx+1));
+          d.addEventListener('click',()=>go(idx));
+          dotsWrap.appendChild(d);
+        });
+        const dots=()=>Array.from(dotsWrap.querySelectorAll('.dot'));
+        function update(){
+          track.style.transform='translateX(' + (-i*100) + '%)';
+          dots().forEach((d,idx)=>d.classList.toggle('active', idx===i));
+        }
+        function go(n){ i=(n+slides.length)%slides.length; update(); }
+        btnPrev.addEventListener('click',()=>go(i-1));
+        btnNext.addEventListener('click',()=>go(i+1));
+        if(slides.length<=1){ btnPrev.style.display='none'; btnNext.style.display='none'; dotsWrap.style.display='none'; }
+        // swipe on touch
+        let startX=null, dx=0;
+        slider.addEventListener('touchstart',e=>{ startX=e.touches[0].clientX; dx=0; },{passive:true});
+        slider.addEventListener('touchmove',e=>{ if(startX!=null){ dx=e.touches[0].clientX-startX; } },{passive:true});
+        slider.addEventListener('touchend',()=>{ if(Math.abs(dx)>40){ if(dx<0) go(i+1); else go(i-1); } startX=null; dx=0; });
+        update();
+      });
+    })();
+  </script>
+
+  <!--
+  ================== วิธีใส่รูปภาพ (โฟลเดอร์ images/) ==================
+  1) สร้างโฟลเดอร์ชื่อ "images" วางไว้โฟลเดอร์เดียวกับไฟล์ HTML นี้
+  2) ใส่ไฟล์รูปของคุณ:
+     - hero.jpg          -> รูปโปรไฟล์/ภาพประกอบใหญ่ในส่วน Hero
+     - proj-1.jpg        -> รูปโปรเจกต์ที่ 1 (Carbon Emission Calculator)
+     - proj-2.jpg        -> รูปโปรเจกต์ที่ 2 (To‑Do List)
+     - proj-3.jpg        -> รูปโปรเจกต์ที่ 3 (ระบบขายบีท)
+  3) ถ้ารูปหาย/ยังไม่ใส่ ระบบจะโชว์ไอคอน SVG เป็น fallback ให้อัตโนมัติ
+  4) แนะนำขนาดรูป: อัตราส่วน 16:9 (เช่น 1600×900px) และไฟล์ < 400KB เพื่อความเร็ว
+  ======================================================
+  -->
+</body>
+</html>
